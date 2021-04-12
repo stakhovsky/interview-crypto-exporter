@@ -1,0 +1,17 @@
+version: "3.3"
+
+services:
+  app:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+      cache_from:
+        - python:3.9-slim-buster
+        - crypto-data-collector:latest
+    image: crypto-data-collector:latest
+    container_name: crypto-data-collector
+    volumes:
+      - .:/opt/app
+    command: python entrypoint.py export_currency_pairs
+    working_dir: /app
+    restart: unless-stopped
