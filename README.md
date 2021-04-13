@@ -7,7 +7,7 @@
 pip install pipenv && pipenv install
 ```
 Точка входа для выполнения скрипта - entrypoint.py.
-Запуск скрипта производится командой 
+Запуск скрипта производится командой:
 ```
 python entrypoiny.py export_currency_pairs
 ```
